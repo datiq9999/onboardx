@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+````markdown
+# OnboardX – MetaMask Embedded (Web3Auth Plug and Play) + Solana
 
-Currently, two official plugins are available:
+This is a demo application showcasing **Web3Auth Plug and Play (PnP)** with **MetaMask Embedded** and **Solana Web3.js** integration.  
+It is designed for educational purposes, such as HackQuest challenges.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Login / Logout** with Web3Auth PnP (MetaMask Embedded)
+- **Show Wallet Address and Balance** on Solana Devnet
+- **Airdrop 0.1 SOL** to the connected wallet (Devnet only)
+- **Sign arbitrary messages** with the wallet
+- **Send 0.01 SOL** to a recipient address
 
-## Expanding the ESLint configuration
+## Tech Stack
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/) + TypeScript
+- [Web3Auth](https://web3auth.io/) PnP SDK
+- [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/)
+- TailwindCSS for styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/onboardx.git
+cd onboardx
+````
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 2. Install dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3. Environment variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Create a `.env` file in the project root based on `.env.example`:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_WEB3AUTH_CLIENT_ID=YOUR_WEB3AUTH_CLIENT_ID
+VITE_WEB3AUTH_NETWORK=sapphire_devnet
+VITE_SOLANA_RPC=https://api.devnet.solana.com
 ```
+
+> **Important:** Do not commit your `.env` file.
+
+### 4. Run locally
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+## Project Structure
+
+```
+src/
+ ├── App.tsx          # Main component (UI + event handlers)
+ ├── index.tsx        # React entry point
+ ├── components/      # UI components (buttons, display, etc.)
+ └── utils/           # Solana & Web3Auth helper functions
+```
+
+## Deployment
+
+You can deploy this project on [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).
+Make sure to add your environment variables in the hosting platform settings.
+
+## License
+
+MIT
+
+```
+
+---
