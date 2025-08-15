@@ -1,5 +1,4 @@
 
-````markdown
 # OnboardX – MetaMask Embedded (Web3Auth Plug and Play) + Solana
 
 This is a demo application showcasing **Web3Auth Plug and Play (PnP)** with **MetaMask Embedded** and **Solana Web3.js** integration.  
@@ -30,7 +29,6 @@ cd onboardx
 
 ```bash
 npm install
-```
 
 ### 3. Environment variables
 
