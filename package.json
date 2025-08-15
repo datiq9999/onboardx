@@ -1,0 +1,28 @@
+{
+  "name": "onboardx",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "@web3auth/modal": "^10.2.0",
+    "@web3auth/openlogin-adapter": "8.12.4",
+    "@web3auth/solana-provider": "8.12.4",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.2"
+  }
+}
